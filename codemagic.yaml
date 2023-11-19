@@ -1,8 +1,6 @@
 workflows:
   ios-workflow:
     name: iOS workflow
-    integrations:
-      app_store_connect: codemagic
         environment:
     vars:
       XCODE_WORKSPACE: "platforms/ios/YOUR_APP.xcworkspace"
