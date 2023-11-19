@@ -1,10 +1,11 @@
 workflows:
   build:
-    name: Your Build Workflow
+    name: Build Workflow
     scripts:
-      - name: Script 1
+      - name: Show APK and IPA Files
         script: |
-          echo "Hello, World!"
-      - name: Script 2
-        script: |
-          echo "Another Script"
+          echo "Listing APK files:"
+          ls -l build/app/outputs/flutter-apk/*.apk
+
+          echo "Listing IPA files:"
+          ls -l build/ios/Runner/*.ipa
