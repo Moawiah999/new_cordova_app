@@ -2,10 +2,18 @@ workflows:
   build:
     name: Build Workflow
     scripts:
-      - name: Show APK and IPA Files
+      - name: Install Dependencies
         script: |
-          echo "Listing APK files:"
-          ls -l build/app/outputs/flutter-apk/*.apk
+          cd cordova_project
+          npm install
+          cordova prepare
 
-          echo "Listing IPA files:"
-          ls -l build/ios/Runner/*.ipa
+      - name: Build Android APK
+        script: |
+          cd cordova_project
+          cordova build android
+
+      - name: Build iOS IPA
+        script: |
+          cd cordova_project
+          cordova build ios
