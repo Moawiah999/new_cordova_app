@@ -2,12 +2,6 @@ workflows:
   build:
     name: Build Workflow
     scripts:
-      - name: Install Dependencies
-        script: |
-          cd cordova_project
-          npm install
-          cordova prepare
-
       - name: Build Android APK
         script: |
           cd cordova_project
